@@ -1,0 +1,14 @@
+[
+{
+    "id": "goto",
+    "children":
+    [{
+        "id": "switch_file",
+        "children":
+        [
+            {"id": "open_file_list"},
+            {"command": "open_file_list" }
+        ]
+    }]
+}
+]
