@@ -7,8 +7,7 @@ class OpenFileListCommand(sublime_plugin.WindowCommand):
         names = []
         for view in views:
             name = view.file_name() or view.name() or 'untitled'
-            names.append([os.path.basename(name),
-                name.replace(sublime.active_window().folders()[0] + '/', '')])
+            names.append([os.path.basename(name), name])
 
         def on_done(index):
             if index >= 0:
