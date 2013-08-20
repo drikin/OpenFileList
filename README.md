@@ -7,7 +7,7 @@ Sublime Text 2 plugin for listing open files in the same group or the same windo
 Keyboard Shortcuts
 -------
 
-By default, by pressing the keyboard shortcuts <kbd>Alt+Ctrl+l</kbd> or <kbd>Alt+Ctrl+Shift+l</kbd> will open a panel with the list of the open files in the current group or in the current window, respectibly. You may change these shortcuts by adding them on your user's key bindings file.
+By default, by pressing the keyboard shortcuts <kbd>Alt+Ctrl+L</kbd> or <kbd>Alt+Ctrl+Shift+L</kbd> will open a panel with the list of the open files in the current group or in the current window, respectibly. You may change these shortcuts by adding them on your user's key bindings file.
 
 
 Settings
