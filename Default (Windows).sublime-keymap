@@ -1,3 +1,4 @@
 [
-    { "keys": ["ctrl+alt+l"], "command": "open_file_list" }
+    { "keys": ["ctrl+alt+l"], "command": "open_file_list", "args": {"list_mode": "active_group"}  },
+    { "keys": ["ctrl+shift+alt+l"], "command": "open_file_list", "args": {"list_mode": "window"}  }
 ]
