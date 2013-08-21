@@ -28,24 +28,30 @@ class OpenFileListCommand(sublime_plugin.WindowCommand):
             views = getViews(self, "window")
 
         names = []
-        index_to_delete = False
+        current_index = False
         i = -1
         for view in views:
             i += 1
             view_path = view.file_name() or view.name() or 'untitled'
+            view_name = os.path.basename(view_path)
 
             # If the view id = current view id,
             # then save the index of current view:
             if view.id() == self.window.active_view().id():
-                index_to_delete = i
+                current_index = i
 
-            names.append([os.path.basename(view_path), view_path])
+            if view.is_dirty():
+                view_name += " " + self.settings.get('mark_dirty_file_char')
+
+            names.append([view_name, view_path])
 
         # Delete current view from arrays:
-        if index_to_delete is not False:
-            del views[index_to_delete]
-            del names[index_to_delete]
-
+        if current_index is not False and self.settings.get('skip_current_file') == True:
+            del views[current_index]
+            del names[current_index]
+        else:
+            names[current_index][0] = self.settings.get('mark_current_file_char') + " " + names[current_index][0]
+ 
         def on_done(index):
             if index >= 0:
                 self.window.focus_view(views[index])
