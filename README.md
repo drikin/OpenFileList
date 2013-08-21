@@ -1,7 +1,13 @@
 OpenFileList
 ==============
 
-Sublime Text 2 plugin for listing open files in the same group or the same window.
+Sublime Text 2 plugin for listing currently open files in the same group or in the same window.
+Additionaly you can enable/disable the following visual enhancements:
+
+* List all files in window if there are no files open while listing by group.
+* Skip current file from the list.
+* Or mark current file with a character/string.
+* Mark dirty files with a character/string.
 
 
 Keyboard Shortcuts
