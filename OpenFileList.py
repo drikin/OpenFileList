@@ -19,6 +19,7 @@ class OpenFileListCommand(sublime_plugin.WindowCommand):
         if self.settings == None:
             self.settings = sublime.load_settings("OpenFileList.sublime-settings")
 
+        # Get the views:
         views = getViews(self, list_mode)
 
         # Fallback: if current group has no views,
@@ -27,9 +28,23 @@ class OpenFileListCommand(sublime_plugin.WindowCommand):
             views = getViews(self, "window")
 
         names = []
+        index_to_delete = False
+        i = -1
         for view in views:
-            name = view.file_name() or view.name() or 'untitled'
-            names.append([os.path.basename(name), name])
+            i += 1
+            view_path = view.file_name() or view.name() or 'untitled'
+
+            # If the view id = current view id,
+            # then save the index of current view:
+            if view.id() == self.window.active_view().id():
+                index_to_delete = i
+
+            names.append([os.path.basename(view_path), view_path])
+
+        # Delete current view from arrays:
+        if index_to_delete is not False:
+            del views[index_to_delete]
+            del names[index_to_delete]
 
         def on_done(index):
             if index >= 0:
