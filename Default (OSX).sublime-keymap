@@ -1,4 +1,4 @@
 [
-    { "keys": ["ctrl+super+l"], "command": "open_file_list", "args": {"list_mode": "active_group"} },
-    { "keys": ["ctrl+shift+super+l"], "command": "open_file_list", "args": {"list_mode": "window"} }
+    { "keys": ["super+option+l"], "command": "open_file_list", "args": {"list_mode": "active_group"} },
+    { "keys": ["super+shift+option+l"], "command": "open_file_list", "args": {"list_mode": "window"} }
 ]

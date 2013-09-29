@@ -7,7 +7,7 @@
         "children":
         [
             {"id": "open_file_list"},
-            {"command": "open_file_list" }
+            {"command": "open_file_list", "args": {"list_mode": "active_group"}}
         ]
     }]
 },
