@@ -13,7 +13,7 @@ Additionaly you can enable/disable the following visual enhancements:
 Keyboard Shortcuts
 -------
 
-By default, by pressing the keyboard shortcuts <kbd>Alt+Ctrl+L</kbd> or <kbd>Alt+Ctrl+Shift+L</kbd> will open a panel with the list of the open files in the current group or in the current window, respectibly. You may change these shortcuts by adding them on your user's key bindings file.
+By default, by pressing the keyboard shortcuts <kbd>Alt+Option+L</kbd> or <kbd>Alt+Option+Shift+L</kbd> will open a panel with the list of the open files in the current group or in the current window, respectibly. You may change these shortcuts by adding them on your user's key bindings file.
 
 
 Settings
