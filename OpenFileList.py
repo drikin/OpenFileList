@@ -9,7 +9,8 @@ def getViews(self, list_mode):
 
     if list_mode == "window":
         views = self.window.views()
-
+        
+    (_, current) = self.window.get_view_index(self.window.active_view())
     return views
 
 class OpenFileListCommand(sublime_plugin.WindowCommand):
@@ -55,5 +56,10 @@ class OpenFileListCommand(sublime_plugin.WindowCommand):
         def on_done(index):
             if index >= 0:
                 self.window.focus_view(views[index])
+            else:
+                self.window.focus_view(views[current])
 
-        self.window.show_quick_panel(names, on_done)
+        if int(sublime.version()) > 3000:
+            self.window.show_quick_panel(names, on_done, sublime.MONOSPACE_FONT, current, on_done)
+        else:
+            self.window.show_quick_panel(names, on_done)
